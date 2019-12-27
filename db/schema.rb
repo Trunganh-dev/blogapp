@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_12_23_060651) do
     t.integer "notified_by_id"
     t.integer "post_id"
     t.integer "identifier"
+    t.string "event"
     t.string "notice_type"
     t.boolean "read", default: false
     t.datetime "created_at", null: false

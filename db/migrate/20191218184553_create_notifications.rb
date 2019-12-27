@@ -7,6 +7,7 @@ class CreateNotifications < ActiveRecord::Migration[5.2]
 
       
       t.integer :identifier
+      t.string	:event
       t.string :notice_type
       t.boolean :read, default: false
 

@@ -13,7 +13,7 @@
 //= require jquery
 //= require rails-ujs
 //= require bootstrap-sprockets
-//= require activestorage
+//= require jquery.transit.min
 //= require_tree .
 
 $(document).ready(function() {

@@ -8,7 +8,8 @@ class Post < ApplicationRecord
 
 	belongs_to :user
 	has_many :comments, dependent: :destroy
-	has_many :notifications, dependent: :destroy
+	has_many :notifications, as: :notificationable
 
 	scope :of_followed_users, -> (following_users) { where user_id: following_users }
-end
+	scope :me, -> (current_user) {where user_id: current_user}
+end	

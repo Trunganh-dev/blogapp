@@ -7,6 +7,9 @@ Rails.application.routes.draw do
                                         as: :link_through
   get 'notifications', to: 'notifications#index'
   get 'profiles/show'
+  
+  root to: 'posts#index'
+
   devise_for :users, :controllers => {registrations: 'registrations'}
   
 	resources :posts do
@@ -17,7 +20,9 @@ Rails.application.routes.draw do
 		end	
 	end
 	
-	root to: 'posts#index'
+	resources :notifications
+
+	mount ActionCable.server => '/cable'
 
 	# Existing route id to user_name
 	get	':user_name', to: 'profiles#show', as: :profile
