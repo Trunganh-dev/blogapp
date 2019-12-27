@@ -2,7 +2,7 @@ class RenderCommentJob < ApplicationJob
   queue_as :default
 
   def perform(comment)
-    ActionCable.server.broadcast "post:#{comment.article_id}:comments", foo: render_comment(comment)
+    ActionCable.server.broadcast "post:#{comment.post_id}:comments", foo: render_comment(comment)
   end
 
   private

@@ -1,7 +1,7 @@
 class NotificationsController < ApplicationController
   
   def index
-  	@notifications = Notification.all
+  	@notifications = current_user.notifications.reverse	
   end
 
   def link_through
